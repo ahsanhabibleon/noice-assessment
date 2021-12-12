@@ -1,0 +1,25 @@
+.type-select {
+  position: relative;
+  display: flex;
+  margin: 0 15px;
+  select {
+    background: #333;
+    color: #fff;
+    padding: 11px 40px 11px 30px;
+    border-radius: 5px;
+    font-size: 26px;
+    font-weight: inherit;
+    outline: 0;
+    border: 1px solid #555;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  .select-icon {
+    fill: #fff;
+    width: 10px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+}

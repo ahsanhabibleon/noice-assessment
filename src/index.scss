@@ -1,0 +1,45 @@
+html {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body {
+  background: #222;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+}
+
+form {
+  margin: 2rem 0;
+  button {
+    margin-left: 1rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 6rem;
+  font-weight: 200;
+}

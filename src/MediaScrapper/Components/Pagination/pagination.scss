@@ -1,0 +1,26 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  &-button {
+    background: transparent;
+    border: 0.1rem solid rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover,
+    &.active {
+      color: #fff;
+      border-color: #fff;
+    }
+    &.active {
+      cursor: default;
+    }
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+}
