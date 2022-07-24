@@ -5,6 +5,7 @@ import ErrorTemplate from "./Components/ErrorTemplate";
 import MediaWrapper from "./MediaWrapper";
 import { createClient } from "pexels";
 import SelectMediaType from "./SelectMediaType";
+import Pagination from "./Components/Pagination";
 const client = createClient(`${process.env.REACT_APP_PEXEL_API_KEY}`);
 
 function MediaScrapper() {
@@ -21,7 +22,9 @@ function MediaScrapper() {
 
   const paginationData = {
     pageNumber: pageNumber,
-    updatePageNumber: (val) => setPageNumber(+val),
+    updatePageNumber: (val) => {
+      setPageNumber(+val)
+    },
     totalPages: listOfMedia.total_results / perPageMedia,
   };
 
@@ -97,12 +100,19 @@ function MediaScrapper() {
         />
 
         <div className="media-wrapper">
-          {isLoading && <LoadingTemplate />}
           {isError.status && <ErrorTemplate message={isError.message} />}
+          {/* Pagination */}
+          {listOfMedia?.photos?.length > 0 || listOfMedia?.videos?.length > 0 ? (
+            <div className="pagination-wrapper">
+              <Pagination data={paginationData} pageLimit={5} />
+            </div>
+          ) : (
+            <h1>No Posts to display</h1>
+          )}
+          {isLoading && <LoadingTemplate />}
           {!isLoading && !isError.status && (
             <MediaWrapper
               listOfMedia={listOfMedia}
-              paginationData={paginationData}
             />
           )}
         </div>

@@ -5,11 +5,11 @@ const Pagination = ({ data, pageLimit }) => {
   const { pageNumber, totalPages, updatePageNumber } = data;
 
   function goToNextPage() {
-    updatePageNumber((page) => page + 1);
+    updatePageNumber(pageNumber + 1);
   }
 
   function goToPreviousPage() {
-    updatePageNumber((page) => page - 1);
+    updatePageNumber(pageNumber - 1);
   }
 
   function changePage(event) {
@@ -46,9 +46,8 @@ const Pagination = ({ data, pageLimit }) => {
       {/* next button */}
       <button
         onClick={goToNextPage}
-        className={`pagination-button${
-          pageNumber === totalPages ? " disabled" : ""
-        }`}
+        className={`pagination-button${pageNumber === totalPages ? " disabled" : ""
+          }`}
       >
         Next
       </button>
